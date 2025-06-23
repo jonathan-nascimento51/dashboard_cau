@@ -1,0 +1,7 @@
+{
+  "image": "openai/codex-universal:latest",
+  "postCreateCommand": "/scripts/setup.sh",
+  "containerEnv": {
+    "NODE_ENV": "development"
+  }
+}

@@ -2,9 +2,19 @@ import requests
 import json
 
 # --- Configurações da API do GLPI ---
-GLPI_URL = "http://cau.ppiratini.intra.rs.gov.br/glpi/apirest.php/" # Altere para a URL base da sua API do GLPI
-APP_TOKEN = "lX7rQuuW4VFNTR8v9xIcZqE1KzfvgvBmOcz1TGoC"             # Altere para o seu App-Token
-USER_TOKEN = "81qQc78fXTy3mqBQ1gfjpekJFuNdtQb9zNkOcZHj"             # Altere para o seu User-Token ou Session-Token
+import os
+import requests
+import json
+from dotenv import load_dotenv
+
+# Load environment variables from a .env file if present
+load_dotenv()
+
+# --- Configurações da API do GLPI ---
+# Valores são obtidos das variáveis de ambiente
+GLPI_URL = os.getenv("GLPI_URL")
+APP_TOKEN = os.getenv("APP_TOKEN")
+USER_TOKEN = os.getenv("USER_TOKEN")
 
 # --- Variável para armazenar o Session-Token ---
 SESSION_TOKEN = None
